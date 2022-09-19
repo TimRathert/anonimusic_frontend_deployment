@@ -38,6 +38,7 @@ width:80%;
   padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
   width: 56.25%;
   margin: 0 auto;
+  
 }
 
 .react-player {
@@ -46,4 +47,20 @@ width:80%;
   top: 0;
   left: 0;
   max-width: 100%;
+  margin: 0 auto
+  
+}
+
+.username {
+  display: flex;
+  align-items: center;
+height: 5%;
+  
+}
+
+.profile-pic {
+  width: 10%;
+  margin-right: 2%;
+  border-radius:50%;
+  aspect-ratio: 1
 }
