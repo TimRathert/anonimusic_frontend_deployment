@@ -27,3 +27,23 @@
   border: solid black;
   
 }
+
+.post-container {
+margin: 0 auto;
+width:80%;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  width: 56.25%;
+  margin: 0 auto;
+}
+
+.react-player {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
