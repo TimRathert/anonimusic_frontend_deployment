@@ -2,7 +2,7 @@ import React from 'react'
 
 const Slideshow = () => {
   return (
-    <div>Slideshow</div>
+    <div className="slideshow-container">Slideshow</div>
   )
 }
 

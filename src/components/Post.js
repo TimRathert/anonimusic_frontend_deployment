@@ -1,8 +1,12 @@
 import React from 'react'
+import ReactPlayer from 'react-player/'
 
-const Post = () => {
+const Post = (props) => {
   return (
-    <div>Post</div>
+    <div className="post-container">
+        <p>Description</p>
+        <div>{props.Comment}</div>
+    </div>
   )
 }
 
