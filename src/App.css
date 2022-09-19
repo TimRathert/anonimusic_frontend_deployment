@@ -1,5 +1,10 @@
+#root {
+  background-color: rgba(60, 77, 49, .2);
+}
+
 .App {
   text-align: center;
+
 }
 
 .nav-container {
@@ -25,12 +30,12 @@
   margin-left: 5%;
   text-align: center;
   border: solid black;
-  
 }
 
 .post-container {
 margin: 0 auto;
 width:80%;
+background-color: whitesmoke
 }
 
 .player-wrapper {
@@ -38,24 +43,19 @@ width:80%;
   padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
   width: 56.25%;
   margin: 0 auto;
-  
 }
 
 .react-player {
-  
   position: absolute;
   top: 0;
   left: 0;
   max-width: 100%;
   margin: 0 auto
-  
 }
 
 .username {
   display: flex;
   align-items: center;
-height: 5%;
-  
 }
 
 .profile-pic {
@@ -63,4 +63,36 @@ height: 5%;
   margin-right: 2%;
   border-radius:50%;
   aspect-ratio: 1
+}
+
+.collapsible .content {
+  padding: 6px;
+  background-color: #eeeeee;
+}
+.collapsible .header {
+  background-color: #dddddd;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.footer-container {
+  margin-bottom: 3px;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 40%;
+  
+}
+
+.copyright {
+  font-size: 15px;
+  margin-right: 10%;
+  font-size: 8px;
 }
