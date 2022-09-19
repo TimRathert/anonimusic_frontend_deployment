@@ -4,9 +4,7 @@ const Nav = () => {
   return (
     <div className="nav-container">
         <div className="nav-button">Home</div>
-        <div className="nav-button"> Post</div>
-
-
+        <div className="nav-button">Post</div>
     </div>
   )
 }
