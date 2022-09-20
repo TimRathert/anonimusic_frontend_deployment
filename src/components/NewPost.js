@@ -3,34 +3,47 @@ import FileInvalidModal from './FileInvalidModal';
 
 function NewPost() {
 
-    
+    //State for form
     const [newForm, setNewForm ] = useState({
         user: 'test-user',
         title: '',
         description: '',
         file: '',
         tags:'',
-
     })
-    const [newTags, setNewTags ] = useState('')
-    
+    // const [tags, setTags] = useState({
+    //     tags: '',
+    // })
+
     //state for Modal
     const [showModal, setShowModal] = useState(false);
 
     const handleChangeDB = (e) => {
         setNewForm({...newForm, [e.target.name]: e.target.value})
     }
-    const handleChangeTags = (e) => {
-        setNewTags({...newTags, [e.target.name]: e.target.value})
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        uploadFile()
-    }
-    const url = process.env.REACT_APP_CLOUDINARY_URL
+    // const handleTags = (e) => {
+    //     setTags({...tags, [e.target.name]: e.target.value})    
+    // }
     
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try{
+            //await uploadFile() //to cloudinary
+            const data = await uploadFile()
+            //console.log(data)
+            uploadPost(data.url)
+           //.then( uploadPost() )// to mongodb
+        }
+        catch(err){
+            console.log(err)
+        }
+        // const promise = uploadFile() //to cloudinary
+        // const promise2 = promise.then(uploadPost(),''); // to mongodb
 
+    }
+        
     const uploadFile = async(file) => {
+        const url = process.env.REACT_APP_CLOUDINARY_URL
         const fileForUpload = document.getElementById('file').files[0];
         // postman worked by passing the arguments in as formdata
         // so the requirements are appeneded to the formdata below vvv
@@ -38,13 +51,15 @@ function NewPost() {
         formData.append('file', fileForUpload);
         formData.append('upload_preset', process.env.REACT_APP_PRESET);
         
-        fetch(url,{
+        const response = await fetch(url,{
             method: 'POST',
             body: formData,
         })
-        .then((response) => {return response.json()})
+        return await response.json()
         // returned url is appended to the newForm state
-        .then((data) => setNewForm({...newForm, file: data.url })) 
+        // console.log(data)
+        // setNewForm({...newForm, file: data.url })
+        // return newForm;
     }
     const checkSize = () => {
         const fileForUpload = document.getElementById('file').files[0];
@@ -52,6 +67,36 @@ function NewPost() {
            document.getElementById('inputForm').reset()
            setShowModal(true)
         }
+    }
+    const uploadPost = async(url) => {
+        const postDBurl = process.env.REACT_APP_MONGODB_URL       
+        const data = {...newForm, file: url}
+        console.log(data)
+        try{
+            const newPost = await fetch(postDBurl,{
+            //const newPost = await fetch("http://localhost:4000",{
+                method: 'POST',
+                headers:{
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+                
+            })
+               console.log(newPost)
+            setNewForm({
+                user: 'test-user',
+                title: '',
+                description: '',
+                file: '',
+                tags:'',
+            })
+            document.getElementById('inputForm').reset()     
+        }
+        catch(e){
+           console.log(e)
+        }
+        //reset form on submit
+
     }
   return (
     <div>
@@ -81,7 +126,7 @@ function NewPost() {
             <input 
                 type="text" 
                 value={ newForm.tags } 
-                onChange= { handleChangeTags }
+                onChange= { handleChangeDB }
                 name="tags"
                 placeholder='Tags'
             />
