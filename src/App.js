@@ -1,16 +1,17 @@
 import Slideshow from './components/Slideshow'
 import Post from './components/Post'
 import Nav from './components/Nav'
-import About from './components/About'
+import NewPost from './components/NewPost'
 import './App.css';
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App(props) {
   return (
     <div className="App">
       <Nav />
       <Slideshow Images="Images"/>
-      <About/>
+      <NewPost />
       <Post Comment="Comment"/>
     </div>
   );

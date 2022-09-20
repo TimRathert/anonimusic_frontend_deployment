@@ -1,6 +1,121 @@
+<<<<<<< HEAD
 .App {
   text-align: center;
 }
+
+html{
+  background-image: url("https://i.imgur.com/GMAzBJy.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.nav-container {
+  height: 5vw;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 30px 20px;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-button {
+  padding-right: 5%;
+  font-size: smaller
+}
+
+/* .name{
+  font-size: 32px;
+  color:white;
+  justify-content: center;
+  align-items:center;
+} */
+
+.slideshow-container {
+  padding-top: 2%;
+  height: 100px;
+  width: 65%;
+  margin-left: 5%;
+  text-align: center;
+  border: solid black;
+}
+
+.Image{
+  height: auto;
+  width: auto;
+}
+
+.post-container {
+margin: 0 auto;
+width:80%;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  width: 56.25%;
+  margin: 0 auto;
+}
+
+.react-player {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+=======
+.App {
+  text-align: center;
+}
+
+.nav-container {
+  height: 5vw;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 30px 20px;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-button {
+  padding-right: 5%;
+  font-size: smaller
+}
+
+.slideshow-container {
+  padding-top: 2%;
+  height: 35%;
+  width: 65%;
+  margin-left: 5%;
+  text-align: center;
+  border: solid black;
+  
+}
+
+.post-container {
+margin: 0 auto;
+width:80%;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  width: 56.25%;
+  margin: 0 auto;
+}
+
+.react-player {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+>>>>>>> 740b4bbf7eb14155ddafb66226ab6db523e8c12f
 
 html{
   background-image: url("https://i.imgur.com/GMAzBJy.png");
