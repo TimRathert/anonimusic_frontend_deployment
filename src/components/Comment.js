@@ -7,7 +7,7 @@ const Comment = () => {
 const [comments, setComments] = useState([]);
 
 const getComments = async () => {
-    // const response = await fetch(url);
+    const response = await fetch(url);
     const data = await response.json;
     setComments(data.results)
 }
@@ -23,6 +23,9 @@ return (
     <p className="collapsible">this sucks man</p>
     <p className="collapsible">yeah seriously</p>
     <p className="collapsible">based</p>
+    </Collapsible>
+    <Collapsible className="new-comment" trigger="New Comment">
+        <NewComment/>
     </Collapsible>
     </div>
 )}
