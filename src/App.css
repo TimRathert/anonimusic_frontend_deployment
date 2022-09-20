@@ -35,7 +35,8 @@
 .post-container {
 margin: 0 auto;
 width:80%;
-background-color: whitesmoke
+background-color: whitesmoke;
+border-radius:2px;
 }
 
 .player-wrapper {
@@ -58,7 +59,8 @@ background-color: whitesmoke
   display: flex;
   align-items: center;
   margin-left: 2%;
-  padding-top: 1%
+  padding-top: 1%;
+  margin-right: 2%
 }
 
 .profile-pic {
@@ -72,6 +74,8 @@ background-color: whitesmoke
   font-weight: bold;
 }
 
+
+/* Named by react-collapse package */
 .Collapsible__contentInner {
   border-bottom: solid rgba(60, 77, 49, .5);
   width: 75%;
