@@ -1,3 +1,6 @@
+import './App.css';
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 import Slideshow from './components/Slideshow'
 import Post from './components/Post'
@@ -5,11 +8,13 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Comment from './components/Comment'
 
-import './App.css';
-import { useState } from 'react'
-console.log({Comment})
+import reducer from './components/Session'
+
+
+
+
 function App(props) {
-  // console.log(Comment)
+  // useEffect(reducer)
   return (
     <div className="App">
       <Nav />
