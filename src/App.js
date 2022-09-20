@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import NewPost from './components/NewPost'
 import './App.css';
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App(props) {
   return (

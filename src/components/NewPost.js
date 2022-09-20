@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import FileInvalidModal from './FileInvalidModal';
 
 function NewPost() {
 
@@ -6,9 +7,13 @@ function NewPost() {
     const [newForm, setNewForm ] = useState({
         title: '',
         description: '',
+        file: '',
+
     })
     const [newTags, setNewTags ] = useState('')
-
+    
+    //state for Modal
+    const [showModal, setShowModal] = useState(false);
 
     const handleChangeDB = (e) => {
         setNewForm({...newForm, [e.target.name]: e.target.value})
@@ -21,36 +26,41 @@ function NewPost() {
         uploadFile()
     }
     const url = process.env.REACT_APP_CLOUDINARY_URL
-   
+    
+
     const uploadFile = async(file) => {
-        try{
-            const fileForUpload = document.getElementById('file').files[0];
-            const formData = new FormData();
-            formData.append('file', fileForUpload);
-            formData.append('upload_preset', process.env.REACT_APP_PRESET);
-            formData.append('folder', 'anonimusic');
-            const uploadFile = await fetch(url,{
-                method: 'POST',
-                headers:{
-                    'Content-Type':'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-            console.log(uploadFile)
-        }
-        catch(e) {
-            console.log(e)
+        const fileForUpload = document.getElementById('file').files[0];
+        // postman worked by passing the arguments in as formdata
+        // so the requirements are appeneded to the formdata below vvv
+        const formData = new FormData();
+        formData.append('file', fileForUpload);
+        formData.append('upload_preset', process.env.REACT_APP_PRESET);
+        
+        fetch(url,{
+            method: 'POST',
+            body: formData,
+        })
+        .then((response) => {return response.json()})
+        // returned url is appended to the newForm state
+        .then((data) => setNewForm({...newForm, file: data.url })) 
+    }
+    const checkSize = () => {
+        const fileForUpload = document.getElementById('file').files[0];
+        if(fileForUpload.size > 400000){
+           document.getElementById('inputForm').reset()
+           setShowModal(true)
         }
     }
-
   return (
     <div>
-        <form onSubmit={ handleSubmit }>
+        <FileInvalidModal showModal = {showModal} setShowModal = {setShowModal}/>
+        <form id="inputForm" onSubmit={ handleSubmit }>
             <input 
                 type="file" 
                 name="newAudioFile" 
                 id="file"
-                accept='audio/*'  
+                accept='audio/*'
+                onChange={ checkSize }  
             />  
             <input 
                 type="text" 
