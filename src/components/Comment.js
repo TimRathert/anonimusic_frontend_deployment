@@ -10,7 +10,6 @@ return (
     <p className="collapsible">this sucks man</p>
     <p className="collapsible">yeah seriously</p>
     <p className="collapsible">based</p>
-
     </Collapsible>
     </div>
 )}
