@@ -13,9 +13,8 @@ const Session = () => {
     } 
   return (
     <>
-    
-    
-    
+    <button onClick={setData}>Set Data</button>
+    <button onClick={getData}>Get Data</button>
     </>
   )
 }
