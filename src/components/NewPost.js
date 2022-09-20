@@ -5,9 +5,11 @@ function NewPost() {
 
     
     const [newForm, setNewForm ] = useState({
+        user: 'test-user',
         title: '',
         description: '',
         file: '',
+        tags:'',
 
     })
     const [newTags, setNewTags ] = useState('')
