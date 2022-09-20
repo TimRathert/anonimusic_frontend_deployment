@@ -17,13 +17,21 @@ const slideImages = [
   },
 ];
 
+const eachSlideStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgrounSize: "cover",
+  height: "350px"
+};
+
 const Slideshow = () => {
     return (
       <div className="slide-container">
         <Slide>
          {slideImages.map((slideImage, index)=> (
             <div className="each-slide" key={index}>
-              <div style={{'backgroundImage': `url(${slideImage.url})`}}>
+              <div style={{ ...eachSlideStyle, 'backgroundImage': `url(${slideImage.url})` }}>
                 <span>{slideImage.caption}</span>
               </div>
             </div>
