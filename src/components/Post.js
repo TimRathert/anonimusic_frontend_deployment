@@ -13,7 +13,6 @@ const Post = (props) => {
         <>
        {props.props.map((post, index)=> {  
           let url =  `'${post.file}'`
-          console.log(url)
           return ( 
           <>
           <h4 className="username"><img class="profile-pic" src="https://picsum.photos/200/300" alt="profile-pic"/>{post.user}</h4>

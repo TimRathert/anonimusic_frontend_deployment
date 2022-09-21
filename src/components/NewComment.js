@@ -7,7 +7,7 @@ const NewComment = (props) => {
     post: ''
   })
 
-  const handleChange = (e) => {
+  const handleChangeComment = (e) => {
     setNewComment({...newComment, [e.target.name]: e.target.value})
   }
 
@@ -25,16 +25,20 @@ const url = process.env.MONGODB_URI;
       <input 
         type="hidden"
         name="user"
-        value={newComment} 
-        onChange={handleChange}
+        value={newComment.user} 
+        onChange={handleChangeComment}
         />
 
       <input
       type="text"
       name="post"
-      value={props}
+      value={newComment.post}
+      onChange={handleChangeComment}
       />
-
+     <input
+      type="submit"
+      name="newComment"
+       />
       </form>
     </div>
   )
