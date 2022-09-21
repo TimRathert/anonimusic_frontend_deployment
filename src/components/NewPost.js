@@ -11,9 +11,6 @@ function NewPost() {
         file: '',
         tags:'',
     })
-    // const [tags, setTags] = useState({
-    //     tags: '',
-    // })
 
     //state for Modal
     const [showModal, setShowModal] = useState(false);
@@ -21,9 +18,7 @@ function NewPost() {
     const handleChangeDB = (e) => {
         setNewForm({...newForm, [e.target.name]: e.target.value})
     }
-    // const handleTags = (e) => {
-    //     setTags({...tags, [e.target.name]: e.target.value})    
-    // }
+
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -57,9 +52,6 @@ function NewPost() {
         })
         return await response.json()
         // returned url is appended to the newForm state
-        // console.log(data)
-        // setNewForm({...newForm, file: data.url })
-        // return newForm;
     }
     const checkSize = () => {
         const fileForUpload = document.getElementById('file').files[0];
@@ -74,7 +66,6 @@ function NewPost() {
         console.log(data)
         try{
             const newPost = await fetch(postDBurl,{
-            //const newPost = await fetch("http://localhost:4000",{
                 method: 'POST',
                 headers:{
                     "Content-Type": "application/json",
