@@ -20,7 +20,8 @@ function App(props) {
   }
 
   useEffect(()=> {
-    getPosts();  
+    getPosts();
+    {Session()}  
   },[]);
 
 

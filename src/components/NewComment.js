@@ -7,35 +7,51 @@ const NewComment = (props) => {
     post: ''
   })
 
-  const handleChange = (e) => {
+  const handleChangeComment = (e) => {
     setNewComment({...newComment, [e.target.name]: e.target.value})
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit  = async (e) => {
     e.preventDefault()
+    try{
+      const updateComment = await fetch(url, {
+        method: "PUT",
+        body: JSON.stringify(newComment),
+        headers: {
+          "content-type": "application/JSON"
+        } 
+      })
+    }
+    catch(err){
+      // console.log(err)
+    }
   }
-console.log(props)
 
-const url = process.env.MONGODB_URI;
+  // console.log(props)
 
+  const url = `${process.env.REACT_APP_MONGODB_URL}${props.props}/comment`
+  console.log(url)
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
       <input 
-        type="text"
-        name="comment"
-        placeholder="Wonderous Audio, Bravo!!!"
-        value={newComment} 
-        onChange={handleChange}
+        type="hidden"
+        name="user"
+        value={newComment.user} 
+        onChange={handleChangeComment}
         />
 
       <input
-      type="hidden"
+      type="text"
       name="post"
-      value={props}
+      value={newComment.post}
+      onChange={handleChangeComment}
       />
-
+     <input
+      type="submit"
+      name="newComment"
+       />
       </form>
     </div>
   )
