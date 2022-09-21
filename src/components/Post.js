@@ -4,7 +4,7 @@ import Comment from './Comment'
 const Post = (props) => {
   return (
     <div className="post-container">
-        <h4 className="username"><img class="profile-pic" src="https://picsum.photos/200/300" alt="profile-pic"/>Username</h4>
+        <h4 className="username"><img className="profile-pic" src="https://picsum.photos/200/300" alt="profile-pic"/>Username</h4>
         <div className='player-wrapper'>
         
         <ReactPlayer
