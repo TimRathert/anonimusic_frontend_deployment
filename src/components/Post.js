@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactPlayer from 'react-player/'
+import AudioPlayer from 'react-h5-audio-player'
 import Comment from './Comment'
 const Post = (props) => {
   return (
@@ -7,11 +7,8 @@ const Post = (props) => {
         <h4 className="username"><img className="profile-pic" src="https://picsum.photos/200/300" alt="profile-pic"/>Username</h4>
         <div className='player-wrapper'>
         
-        <ReactPlayer
-          className='react-player'
-          url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
-          width='100%'
-          height='100%'
+        <AudioPlayer
+          src={post.file}
         />
       </div>
         <p>This is a really hot test description.</p>
