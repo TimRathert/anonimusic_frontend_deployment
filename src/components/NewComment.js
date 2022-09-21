@@ -8,7 +8,6 @@ const NewComment = () => {
 
 const url = process.env.MONGODB_URI;
 
-const uploadComment = 
 
   return (
     <div>
@@ -17,13 +16,13 @@ const uploadComment =
         type="text"
         name="comment"
         placeholder="Wonderous Audio, Bravo!!!"
-        value={} 
+        value='test' 
         />
 
       <input
       type="hidden"
       name="post"
-      value={}
+      value='test'
       />
 
       </form>
