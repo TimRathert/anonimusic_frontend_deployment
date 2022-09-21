@@ -34,6 +34,7 @@ const Post = (props) => {
           )
         })}
         </>
+
     </div>
   )
 }
