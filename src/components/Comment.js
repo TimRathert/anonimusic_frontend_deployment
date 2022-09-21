@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useState} from 'react'
 import Collapsible from 'react-collapsible'
 
-const Comment = () => {
- 
+import NewComment from './NewComment';
+
+const Comment = (props) => {
+
 return (
     <div className="comment">
     <Collapsible className="comment-title" trigger="Comments">
@@ -11,6 +13,7 @@ return (
     <p className="collapsible">yeah seriously</p>
     <p className="collapsible">based</p>
     </Collapsible>
+    
     </div>
 )}
 
