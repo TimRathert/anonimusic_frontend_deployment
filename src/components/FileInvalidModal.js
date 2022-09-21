@@ -14,7 +14,7 @@ function FileInvalidModal(props) {
                     <Modal.Title>File too large</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>It's 2022. Make the quality worse, people like that...</p>
+                    <p>It's 2022. Make the quality worse or say less.</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import FileInvalidModal from './FileInvalidModal';
 
 function NewPost() {
@@ -14,7 +14,7 @@ function NewPost() {
 
     //state for Modal
     const [showModal, setShowModal] = useState(false);
-
+    let audioFile = useRef (null);
     const handleChangeDB = (e) => {
         setNewForm({...newForm, [e.target.name]: e.target.value})
     }
@@ -39,7 +39,7 @@ function NewPost() {
         
     const uploadFile = async(file) => {
         const url = process.env.REACT_APP_CLOUDINARY_URL
-        const fileForUpload = document.getElementById('file').files[0];
+        const fileForUpload = audioFile.current;
         // postman worked by passing the arguments in as formdata
         // so the requirements are appeneded to the formdata below vvv
         const formData = new FormData();
@@ -53,12 +53,13 @@ function NewPost() {
         return await response.json()
         // returned url is appended to the newForm state
     }
-    const checkSize = () => {
-        const fileForUpload = document.getElementById('file').files[0];
-        if(fileForUpload.size > 400000){
+    const checkSize = (e) => {
+        audioFile.current = e.target.files[0]
+        if(audioFile.current.size > 400000){
            document.getElementById('inputForm').reset()
            setShowModal(true)
         }
+
     }
     const uploadPost = async(url) => {
         const postDBurl = process.env.REACT_APP_MONGODB_URL       
