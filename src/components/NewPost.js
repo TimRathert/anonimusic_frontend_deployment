@@ -69,7 +69,7 @@ function NewPost() {
     const uploadPost = async(url) => {
         const postDBurl = process.env.REACT_APP_MONGODB_URL       
         const data = {...newForm, file: url}
-        console.log(data)
+        //console.log(data)
         try{
             const newPost = await fetch(postDBurl,{
                 method: 'POST',
