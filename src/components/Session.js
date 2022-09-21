@@ -5,11 +5,11 @@ let str = (`User${Date.now()}${Math.floor(Math.random() * 10)}${Math.floor(Math.
 const Session = () => {
     const setData = () => {
         let sessionObject = {username: str}
-        sessionStorage.setItem('user data', JSON.stringify(sessionObject))
+        sessionStorage.setItem('userdata', JSON.stringify(sessionObject))
     }
 
     const getData = () => {
-        let sessionData = sessionStorage.getItem('user data')
+        let sessionData = sessionStorage.getItem('userdata')
         sessionData = JSON.parse(sessionData);
         console.log(sessionData.username)
     }
