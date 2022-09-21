@@ -4,21 +4,8 @@ import Collapsible from 'react-collapsible'
 
 import NewComment from './NewComment';
 
-const Comment = () => {
+const Comment = (props) => {
 
-// const [comments, setComments] = useState([]);
-
-// const getComments = async () => {
-//     const response = await fetch(url);
-//     const data = await response.json;
-//     setComments(data.results)
-// }
-
-// useEffect(()=> {
-//     getComments();
-// }, []);
-
-// const loaded = () => {
 return (
     <div className="comment">
     <Collapsible className="comment-title" trigger="Comments">
@@ -32,10 +19,4 @@ return (
     </div>
 )}
 
-// const loading = () => {
-//     return(<h1>Loading...</h1>)
-// }
-
-// return comments ? loaded() : loading();
-// }
 export default Comment
