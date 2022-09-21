@@ -1,8 +1,10 @@
 import React from 'react'
 
+let str = (`User${Date.now()}${Math.floor(Math.random() * 10)}${Math.floor(Math.random() * 10)}`)
+
 const Session = () => {
     const setData = () => {
-        let sessionObject = {username: 'Harvey Function'}
+        let sessionObject = {username: str}
         sessionStorage.setItem('user data', JSON.stringify(sessionObject))
     }
 
@@ -10,13 +12,9 @@ const Session = () => {
         let sessionData = sessionStorage.getItem('user data')
         sessionData = JSON.parse(sessionData);
         console.log(sessionData.username)
-    } 
-  return (
-    <>
-    <button onClick={setData}>Set Data</button>
-    <button onClick={getData}>Get Data</button>
-    </>
-  )
+    }
+    setData();
+    getData(); 
 }
 
 export default Session

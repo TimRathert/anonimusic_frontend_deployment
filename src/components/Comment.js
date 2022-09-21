@@ -5,7 +5,8 @@ import Collapsible from 'react-collapsible'
 import NewComment from './NewComment';
 
 const Comment = (props) => {
-console.log(props.props)
+    
+
     return (
     
         <section className="collapsible">
