@@ -8,11 +8,10 @@ const Comment = (props) => {
     
 
     return (
-    
         <section className="collapsible">
             <Collapsible className="comment-title" trigger="Comments">
             {props.props.map((comment, index)=>
-            <div className="comment">
+            <div className="comment" key={index}>
             <p>{comment.post}</p>
             </div>
             )}
