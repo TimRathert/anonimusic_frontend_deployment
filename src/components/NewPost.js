@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
 import FileInvalidModal from './FileInvalidModal';
+import Spinner from 'react-bootstrap/Spinner';
 
 function NewPost() {
 
@@ -15,6 +16,8 @@ function NewPost() {
     //state for Modal
     const [showModal, setShowModal] = useState(false);
     let audioFile = useRef (null);
+    const [ formReady, setFormReady ] = useState(true);
+
     const handleChangeDB = (e) => {
         setNewForm({...newForm, [e.target.name]: e.target.value})
     }
@@ -22,6 +25,7 @@ function NewPost() {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setFormReady(false)
         try{
             //await uploadFile() //to cloudinary
             const data = await uploadFile()
@@ -34,7 +38,7 @@ function NewPost() {
         }
         // const promise = uploadFile() //to cloudinary
         // const promise2 = promise.then(uploadPost(),''); // to mongodb
-
+        setFormReady(true)
     }
         
     const uploadFile = async(file) => {
@@ -58,6 +62,7 @@ function NewPost() {
         if(audioFile.current.size > 400000){
            document.getElementById('inputForm').reset()
            setShowModal(true)
+           audioFile.current = null;
         }
 
     }
@@ -88,45 +93,61 @@ function NewPost() {
            console.log(e)
         }
         //reset form on submit
+    }
 
+    const ready = () => {
+        return(
+            <form id="inputForm" onSubmit={ handleSubmit }>
+                <input 
+                    type="file" 
+                    name="newAudioFile" 
+                    id="file"
+                    accept='audio/*'
+                    onChange={ checkSize }  
+                />  
+                <input 
+                    type="text" 
+                    value={ newForm.title } 
+                    onChange= { handleChangeDB }
+                    name="title"
+                    placeholder='Title'
+                />
+                <input 
+                    type="text" 
+                    value={ newForm.description } 
+                    onChange= { handleChangeDB } 
+                    name="description"
+                    placeholder='Description'
+                />
+                <input 
+                    type="text" 
+                    value={ newForm.tags } 
+                    onChange= { handleChangeDB }
+                    name="tags"
+                    placeholder='Tags'
+                />
+                <input 
+                    type="submit"
+                    name='newAudio'
+                />
+            </form>
+        )
+    }
+    const notReady = () => {
+        return(
+            <Spinner 
+                animation="border"
+                role="status"
+                aria-hidden="true"
+            >
+                <span className="loading-indicator">🎤</span>
+            </Spinner>
+        )
     }
   return (
     <div>
         <FileInvalidModal showModal = {showModal} setShowModal = {setShowModal}/>
-        <form id="inputForm" onSubmit={ handleSubmit }>
-            <input 
-                type="file" 
-                name="newAudioFile" 
-                id="file"
-                accept='audio/*'
-                onChange={ checkSize }  
-            />  
-            <input 
-                type="text" 
-                value={ newForm.title } 
-                onChange= { handleChangeDB }
-                name="title"
-                placeholder='Title'
-            />
-            <input 
-                type="text" 
-                value={ newForm.description } 
-                onChange= { handleChangeDB } 
-                name="description"
-                placeholder='Description'
-            />
-            <input 
-                type="text" 
-                value={ newForm.tags } 
-                onChange= { handleChangeDB }
-                name="tags"
-                placeholder='Tags'
-            />
-            <input 
-                type="submit"
-                name='newAudio'
-            />
-        </form>
+        {formReady ? ready() : notReady()}
     </div>
   )
 }

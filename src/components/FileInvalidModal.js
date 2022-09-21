@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from'react-bootstrap/Button';
 
@@ -14,7 +14,7 @@ function FileInvalidModal(props) {
                     <Modal.Title>File too large</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>It's 2022. Make the quality worse or say less.</p>
+                    <p>Make the quality worse or say less.</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
