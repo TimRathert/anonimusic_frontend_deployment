@@ -5,16 +5,18 @@ import Collapsible from 'react-collapsible'
 import NewComment from './NewComment';
 
 const Comment = (props) => {
-
-return (
-    <div className="comment">
-    <Collapsible className="comment-title" trigger="Comments">
-    <p className="collapsible">this sucks man</p>
-    <p className="collapsible">yeah seriously</p>
-    <p className="collapsible">based</p>
-    </Collapsible>
+console.log(props.props)
+    return (
     
-    </div>
+        <section className="collapsible">
+            <Collapsible className="comment-title" trigger="Comments">
+            {props.props.map((comment, index)=>
+            <div className="comment">
+            <p>{comment.post}</p>
+            </div>
+            )}
+            </Collapsible>
+        </section>
 )}
 
 export default Comment

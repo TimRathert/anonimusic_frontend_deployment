@@ -25,7 +25,7 @@ const Post = (props) => {
              />
           </div>
           <p></p>
-          <Comment props={post.comment}/>
+          <Comment props={post.comments}/>
           <Collapsible className="new-comment" trigger="New Comment">
             <NewComment props={post._id}/>
           </Collapsible>
