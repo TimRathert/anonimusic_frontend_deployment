@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const NewComment = () => {
+const NewComment = (props) => {
   
+  const [newComment, setNewComment] = useState ({
+    user: '',
+    post: ''
+  })
+
+  const handleChange = (e) => {
+    setNewComment({...newComment, [e.target.name]: e.target.value})
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
   }
+console.log(props)
 
 const url = process.env.MONGODB_URI;
 
@@ -16,13 +26,14 @@ const url = process.env.MONGODB_URI;
         type="text"
         name="comment"
         placeholder="Wonderous Audio, Bravo!!!"
-        value='test' 
+        value={newComment} 
+        onChange={handleChange}
         />
 
       <input
       type="hidden"
       name="post"
-      value='test'
+      value={props}
       />
 
       </form>

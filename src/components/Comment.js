@@ -13,9 +13,7 @@ return (
     <p className="collapsible">yeah seriously</p>
     <p className="collapsible">based</p>
     </Collapsible>
-    <Collapsible className="new-comment" trigger="New Comment">
-        <NewComment/>
-    </Collapsible>
+    
     </div>
 )}
 

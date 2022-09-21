@@ -1,36 +1,39 @@
 import React from 'react'
-import ReactPlayer from 'react-player'
+import ReactAudioPlayer from 'react-audio-player'
 // import forceVideo from 'react-player'
 import Comment from './Comment'
+import Collapsible from 'react-collapsible'
+import NewComment from './NewComment'
 
 
 const Post = (props) => {
-
+   
   return (
     <div className="post-container">
         <>
-       {props.props.map((post, index, results)=> { 
+       {props.props.map((post, index)=> {  
+          let url =  `'${post.file}'`
+          console.log(url)
           return ( 
           <>
           <h4 className="username"><img class="profile-pic" src="https://picsum.photos/200/300" alt="profile-pic"/>{post.user}</h4>
           <div className='player-wrapper'>
-            
-            <ReactPlayer
-            className='react-player'
-              url="http://res.cloudinary.com/anonimusic/video/upload/v1663354848/Anonimusic/The_Bamboos_-_Amen_Brother_part1_atshkr.wav"
-              width="400px"
-              height="50px"
-              playing={false}
-              controls={true}
+            <ReactAudioPlayer
+              className='react-player'
+              src = {post.file}
+              controls
+              key={index}   
              />
           </div>
           <p></p>
           <Comment props={post.comment}/>
+          <Collapsible className="new-comment" trigger="New Comment">
+            <NewComment props={post._id}/>
+          </Collapsible>
           </>
           )
         })}
         </>
-          
     </div>
   )
 }
