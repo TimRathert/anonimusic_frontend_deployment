@@ -23,15 +23,14 @@ const url = process.env.MONGODB_URI;
     <div>
       <form onSubmit={handleSubmit}>
       <input 
-        type="text"
-        name="comment"
-        placeholder="Wonderous Audio, Bravo!!!"
+        type="hidden"
+        name="user"
         value={newComment} 
         onChange={handleChange}
         />
 
       <input
-      type="hidden"
+      type="text"
       name="post"
       value={props}
       />
