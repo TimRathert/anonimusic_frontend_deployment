@@ -68,7 +68,7 @@ function NewPost(props) {
     }
     const uploadPost = async(url) => {
         const postDBurl = process.env.REACT_APP_MONGODB_URL       
-        const data = {...newForm, file: url}
+        const data = {...newForm, file: url, user: `${props.session}`}
         //console.log(data)
         try{
             const newPost = await fetch(postDBurl,{
@@ -81,7 +81,7 @@ function NewPost(props) {
             })
                console.log(newPost)
             setNewForm({
-                user: '',
+                user: `test-user`,
                 title: '',
                 description: '',
                 file: '',
@@ -98,12 +98,6 @@ function NewPost(props) {
     const ready = () => {
         return(
             <form id="inputForm" onSubmit={ handleSubmit }>
-                <input
-                    type="hidden"
-                    name="user"
-                    id="user"
-                    value={props.session}
-                    />
                 <input 
                     type="file" 
                     name="newAudioFile" 
