@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import {useState} from 'react';
+import React from 'react';
 import Collapsible from 'react-collapsible';
-import CommentTime from './CommentTime';
-import NewComment from './NewComment';
+//import CommentTime from './CommentTime';
+
 import ColorMe from './ColorMe'
 
 const Comment = (props) => {
-const commentsSorted = props.props.reverse();
+
+//const commentsSorted = props.props.reverse();
 
     return (
         <section className="collapsible">

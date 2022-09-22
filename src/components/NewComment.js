@@ -20,8 +20,9 @@ const NewComment = (props) => {
         body: JSON.stringify(data),
         headers: {
           "content-type": "application/JSON"
-        } 
+        }
       })
+      
       props.getPosts();
       setNewComment({
         user: '',
