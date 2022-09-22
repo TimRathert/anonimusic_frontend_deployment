@@ -12,6 +12,32 @@ const Post = (props) => {
   useEffect(()=> {
     props.getPosts();
   },[]);
+ 
+  const deletePost = (newVar) => {
+    const actuallyDeletePost = async (e) => {
+      e.preventDefault()
+      const url =`${process.env.REACT_APP_MONGODB_URL}${newVar._id}`
+      console.log(url)
+      try{
+        const deleteThis = await fetch(url,{
+          method: 'DELETE'
+        })
+        const deletedPost = await deleteThis.json()
+        props.getPosts()
+      }
+      catch(err) {
+        console.log(err)
+      }
+    }  
+
+      if(props.session == newVar.user){return (<input
+        type="button"
+        className='deletePostButton'
+        value='Delete'
+        onClick= { actuallyDeletePost } 
+        />)}
+      else{return(<div></div>)}
+  }
 
   return (
     <div className="post-container">
@@ -30,6 +56,7 @@ const Post = (props) => {
                 >{post.user}:</div>
               </div>
               <div className='postTitle'>{ post.title }</div>
+              { deletePost(post) }
             </div>  
               
             <div className='player-wrapper postMiddleBar'>
@@ -55,7 +82,7 @@ const Post = (props) => {
               >
                 <NewComment getPosts={props.getPosts} props={post._id} session={props.session}/>
               </Collapsible>
-              <Comment props={post.comments}/>
+              <Comment props={post.comments} session ={ props.session }/>
           </div>
           )
         })}

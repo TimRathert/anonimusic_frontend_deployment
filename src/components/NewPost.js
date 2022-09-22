@@ -114,6 +114,7 @@ function NewPost(props) {
                     id="file"
                     accept='audio/*'
                     onChange={ checkSize }  
+                    className="formInput"
                 />  
                 <input 
                     type="text" 
@@ -121,6 +122,7 @@ function NewPost(props) {
                     onChange= { handleChangeDB }
                     name="title"
                     placeholder='Title'
+                    className="formInput"
                 />
                 <input 
                     type="text" 
@@ -128,6 +130,7 @@ function NewPost(props) {
                     onChange= { handleChangeDB } 
                     name="description"
                     placeholder='Description'
+                    className="formInput"
                 />
                 <input 
                     type="text" 
@@ -135,10 +138,12 @@ function NewPost(props) {
                     onChange= { handleChangeDB }
                     name="tags"
                     placeholder='Tags'
+                    className="formInput"
                 />
                 <input 
                     type="submit"
                     name='newAudio'
+                    className="formInput"
                 />
             </form>
             </Collapsible>

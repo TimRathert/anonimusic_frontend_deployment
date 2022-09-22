@@ -12,7 +12,6 @@ const Session = () => {
     const getData = () => {
         let sessionData = sessionStorage.getItem('userdata')
         sessionData = JSON.parse(sessionData);
-        console.log(sessionData.avatar)
     }
     setData();
     getData(); 
