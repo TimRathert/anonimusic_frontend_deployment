@@ -38,7 +38,7 @@ const NewComment = (props) => {
   console.log(url)
 
   return (
-    <div>
+    <div className='newCommentForm'>
       <form onSubmit={handleSubmit}>
       <input 
         type="hidden"
