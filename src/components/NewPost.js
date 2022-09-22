@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import FileInvalidModal from './FileInvalidModal';
 import Spinner from 'react-bootstrap/Spinner';
 
-function NewPost() {
+function NewPost(props) {
 
     //State for form
     const [newForm, setNewForm ] = useState({
@@ -81,7 +81,7 @@ function NewPost() {
             })
                console.log(newPost)
             setNewForm({
-                user: 'test-user',
+                user: '',
                 title: '',
                 description: '',
                 file: '',
@@ -98,6 +98,12 @@ function NewPost() {
     const ready = () => {
         return(
             <form id="inputForm" onSubmit={ handleSubmit }>
+                <input
+                    type="hidden"
+                    name="user"
+                    id="user"
+                    value={props.session}
+                    />
                 <input 
                     type="file" 
                     name="newAudioFile" 

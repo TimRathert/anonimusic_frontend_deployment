@@ -12,6 +12,7 @@ const url = 'https://anonimusic-backend.herokuapp.com/'
 
 function App(props) {
   const [post, setPost ] = useState([])
+  const [session, setSession ] = useState("")
 
   const getPosts = async () => {
     const response = await fetch(url);
@@ -19,20 +20,26 @@ function App(props) {
     setPost(data)
   }
 
+  const getSession = () => {
+    Session();
+    const response = (JSON.parse(sessionStorage.userdata).username)
+    setSession(response)
+  }
+
   useEffect(()=> {
     getPosts();
-    
+    getSession();
   },[]);
 
 
   const loaded = () => {
+ 
   return (
     <div className="App">
       <Nav />
-      <Session />
       <Slideshow Images="Images"/>
-      <NewPost />
-      <Post props={post}/>
+      <NewPost session={session}/>
+      <Post session={session} props={post}/>
       <Footer/>
     </div>
   );

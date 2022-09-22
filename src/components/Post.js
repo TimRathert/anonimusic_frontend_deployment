@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactAudioPlayer from 'react-audio-player'
-// import forceVideo from 'react-player'
 import Comment from './Comment'
 import Collapsible from 'react-collapsible'
 import NewComment from './NewComment'
 
-console.log(JSON.parse(sessionStorage.userdata).username)
+
 const Post = (props) => {
    
   return (
