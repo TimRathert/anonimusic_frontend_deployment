@@ -19,7 +19,7 @@ const Post = (props) => {
        {props.props.map((post, index)=> {  
           return ( 
           <div key = { index }>
-            <ColorMe props={post.user}/>
+          <ColorMe props={post.user}/>
           <h4 className="username"><img className="profile-pic" src="https://picsum.photos/200/300" alt="profile-pic"/>{post.user}</h4>
           <div className='player-wrapper'>
             <ReactAudioPlayer
