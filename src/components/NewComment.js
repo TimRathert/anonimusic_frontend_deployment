@@ -21,6 +21,11 @@ const NewComment = (props) => {
           "content-type": "application/JSON"
         } 
       })
+      props.getPosts();
+      setNewComment({
+        user: '',
+        post: ''
+      })
     }
     catch(err){
       // console.log(err)
