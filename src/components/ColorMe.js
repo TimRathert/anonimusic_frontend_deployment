@@ -1,7 +1,8 @@
 import React from 'react'
 
 const ColorMe = (props) => {
-  let userArray = Array.from(props.props)
+//   let userArray = Array.from(props.props)
+    let userArray = props
   for(let i = userArray.length-1; i<userArray.length;i--){
     let r = `${parseInt(userArray[i]+userArray[i-1]+userArray[i-2])}`
     let b = `${parseInt(userArray[i-3]+userArray[i-4]+userArray[i-5])}`
@@ -39,11 +40,8 @@ const ColorMe = (props) => {
     
     let colors = [parseInt(r),parseInt(b),parseInt(g)]
     // console.log(colors)
-    return (
-        <>
-        <p style={{color:`rgb(${colors[0]},${colors[1]},${colors[2]})`}}>Hello</p>
-        </>
-    )
+    const color = {color:`rgb(${colors[0]},${colors[1]},${colors[2]})`}
+    return color
   }
   
 }

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Collapsible from 'react-collapsible';
 import CommentTime from './CommentTime';
 import NewComment from './NewComment';
+import ColorMe from './ColorMe'
 
 const Comment = (props) => {
 const commentsSorted = props.props.reverse();
@@ -21,10 +22,13 @@ const commentsSorted = props.props.reverse();
                     fontWeight: "bold",
                 }}
             >   
-                {commentsSorted.map((comment, index)=>
+                {props.props.map((comment, index)=>
                     <span className="comment" key={index}>
-                        console.log(comment)
-                        <div className='commentUser'>{ comment.user }</div>
+                        <div 
+                            className='commentUser'
+                            style={ColorMe(comment.user)}
+                        
+                        >{ comment.user }</div>
                         <div className='commentContent'>{ comment.post }</div>
                         {/* <div className="commentTimestamp">{ CommentTime(new Date(comment.createdAt))}</div>
                             Comment schema nested within post schema, will refactor later */}
