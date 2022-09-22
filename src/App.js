@@ -27,7 +27,7 @@ function App(props) {
   }
 
   useEffect(()=> {
-    getPosts();
+    // getPosts();
     getSession();
   },[]);
 
@@ -38,8 +38,8 @@ function App(props) {
     <div className="App">
       <Nav />
       <Slideshow Images="Images"/>
-      <NewPost session={session}/>
-      <Post session={session} props={post}/>
+      <NewPost getPosts={getPosts} session={session}/>
+      <Post getPosts={getPosts} session={session} props={post}/>
       <Footer/>
     </div>
   );

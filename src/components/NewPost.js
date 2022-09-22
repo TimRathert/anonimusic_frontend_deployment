@@ -3,7 +3,7 @@ import FileInvalidModal from './FileInvalidModal';
 import Spinner from 'react-bootstrap/Spinner';
 
 function NewPost(props) {
-
+    // console.log(props.getPosts());
     //State for form
     const [newForm, setNewForm ] = useState({
         user: 'test-user',
@@ -86,8 +86,9 @@ function NewPost(props) {
                 description: '',
                 file: '',
                 tags:'',
-            })
-            document.getElementById('inputForm').reset()     
+            }) 
+            document.getElementById('inputForm').reset() 
+            props.getPosts();    
         }
         catch(e){
            console.log(e)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactAudioPlayer from 'react-audio-player'
 import Comment from './Comment'
 import Collapsible from 'react-collapsible'
@@ -6,7 +6,12 @@ import NewComment from './NewComment'
 
 
 const Post = (props) => {
-   
+  
+  
+  useEffect(()=> {
+    props.getPosts();
+  },[]);
+  
   return (
     <div className="post-container">
        {props.props.map((post, index)=> {  
