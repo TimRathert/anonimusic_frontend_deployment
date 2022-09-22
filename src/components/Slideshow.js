@@ -5,15 +5,15 @@ import 'react-slideshow-image/dist/styles.css'
 const slideImages = [
   {
     url: 'https://i.imgur.com/IXUYGjF.png',
-    caption: 'Slide 1'
+    // caption: 'Slide 1'
   },
   {
     url: 'https://i.imgur.com/su7HYwJ.png',
-    caption: 'Slide 2'
+    // caption: 'Slide 2'
   },
   {
     url: 'https://i.imgur.com/6a6xTLY.png',
-    caption: 'Slide 3'
+    // caption: 'Slide 3'
   },
 ];
 
