@@ -37,7 +37,7 @@ const NewComment = (props) => {
   const url = `${process.env.REACT_APP_MONGODB_URL}${props.props}/comment`
 
   return (
-    <div>
+    <div className='newCommentForm'>
       <form onSubmit={handleSubmit}>
       <input 
         type="hidden"

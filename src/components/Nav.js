@@ -1,17 +1,19 @@
 import React from 'react'
+import { useState } from 'react';
 import '../App.css'
-
 
 
 const Nav = (props) => {
   return (
-    <div className="nav-container">
-        <div className="nav-button">Welcome, {props.session}</div>
-        <div className="nav-button">Home</div>
-        <div className="nav-button"> Post</div>
-        <p className="name">Anonimusic</p>
-
-    </div>
+    <section style={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>
+      
+      <img className="anonimusic" src='https://i.imgur.com/tCdcpsR.png' alt='Anonimusic'></img>
+      <div className="nav-container">
+        <div><p className="nav-button">Welcome, {props.session}</p></div>
+//         <div><p className="nav-button">Home</p></div>
+//         <div><p className="nav-button">Post</p></div>
+      </div>
+    </section>
   )
 }
 
