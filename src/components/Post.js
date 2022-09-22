@@ -50,7 +50,7 @@ const Post = (props) => {
 
                 }}
               >
-                <NewComment getPosts={props.getPosts} props={post._id}/>
+                <NewComment getPosts={props.getPosts} props={post._id} session={props.session}/>
               </Collapsible>
               <Comment props={post.comments}/>
           </div>

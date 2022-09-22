@@ -23,9 +23,12 @@ const commentsSorted = props.props.reverse();
             >   
                 {commentsSorted.map((comment, index)=>
                     <span className="comment" key={index}>
-                        <div className='commentUser'>{ comment.user }User166385387342353</div>
+                        console.log(comment)
+                        <div className='commentUser'>{ comment.user }</div>
                         <div className='commentContent'>{ comment.post }</div>
-                        <div className="commentTimestamp">{ CommentTime(new Date(comment.createdAt))}</div>
+                        {/* <div className="commentTimestamp">{ CommentTime(new Date(comment.createdAt))}</div>
+                            Comment schema nested within post schema, will refactor later */}
+                        
                     </span>
                 )}
             </Collapsible>

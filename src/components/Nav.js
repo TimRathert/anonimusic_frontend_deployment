@@ -10,8 +10,8 @@ const Nav = (props) => {
       <img className="anonimusic" src='https://i.imgur.com/tCdcpsR.png' alt='Anonimusic'></img>
       <div className="nav-container">
         <div><p className="nav-button">Welcome, {props.session}</p></div>
-//         <div><p className="nav-button">Home</p></div>
-//         <div><p className="nav-button">Post</p></div>
+{/*     <div><p className="nav-button">Home</p></div>
+        <div><p className="nav-button">Post</p></div> */}
       </div>
     </section>
   )

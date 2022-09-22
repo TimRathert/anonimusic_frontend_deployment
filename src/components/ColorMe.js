@@ -38,7 +38,7 @@ const ColorMe = (props) => {
     }
     
     let colors = [parseInt(r),parseInt(b),parseInt(g)]
-    console.log(colors)
+    // console.log(colors)
     return (
         <>
         <p style={{color:`rgb(${colors[0]},${colors[1]},${colors[2]})`}}>Hello</p>

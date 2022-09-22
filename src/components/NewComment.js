@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const NewComment = (props) => {
-  
+  // console.log(props.session)
   const [newComment, setNewComment] = useState ({
     user: '',
     post: ''
@@ -14,9 +14,10 @@ const NewComment = (props) => {
   const handleSubmit  = async (e) => {
     e.preventDefault()
     try{
+      const data = {...newComment, user: `${props.session}`}
       const updateComment = await fetch(url, {
         method: "PUT",
-        body: JSON.stringify(newComment),
+        body: JSON.stringify(data),
         headers: {
           "content-type": "application/JSON"
         } 
@@ -39,12 +40,6 @@ const NewComment = (props) => {
   return (
     <div className='newCommentForm'>
       <form onSubmit={handleSubmit}>
-      <input 
-        type="hidden"
-        name="user"
-        value={newComment.user} 
-        onChange={handleChangeComment}
-        />
 
       <input
       type="text"
