@@ -35,7 +35,6 @@ const NewComment = (props) => {
   // console.log(props)
 
   const url = `${process.env.REACT_APP_MONGODB_URL}${props.props}/comment`
-  console.log(url)
 
   return (
     <div className='newCommentForm'>
