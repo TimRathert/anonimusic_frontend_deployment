@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react';
 import FileInvalidModal from './FileInvalidModal';
 import Spinner from 'react-bootstrap/Spinner';
+import Collapsible from 'react-collapsible';
+
+
 
 function NewPost(props) {
     // console.log(props.getPosts());
@@ -95,9 +98,12 @@ function NewPost(props) {
         }
         //reset form on submit
     }
-
+    
     const ready = () => {
+       
+       
         return(
+            <Collapsible trigger={(<i class="fa-solid fa-microphone"></i>)}>
             <form id="inputForm" onSubmit={ handleSubmit }>
                 <input 
                     type="file" 
@@ -132,6 +138,8 @@ function NewPost(props) {
                     name='newAudio'
                 />
             </form>
+            </Collapsible>
+            
         )
     }
     const notReady = () => {
@@ -146,7 +154,9 @@ function NewPost(props) {
         )
     }
   return (
+    
     <div>
+        
         <FileInvalidModal showModal = {showModal} setShowModal = {setShowModal}/>
         {formReady ? ready() : notReady()}
     </div>

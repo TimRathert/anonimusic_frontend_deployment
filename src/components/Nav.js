@@ -3,9 +3,10 @@ import '../App.css'
 
 
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <div className="nav-container">
+        <div className="nav-button">Welcome, {props.session}</div>
         <div className="nav-button">Home</div>
         <div className="nav-button"> Post</div>
         <p className="name">Anonimusic</p>
