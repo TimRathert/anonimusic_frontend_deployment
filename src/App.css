@@ -4,7 +4,6 @@
 
 .App {
   text-align: center;
-
 }
 
 .nav-container {
@@ -16,11 +15,29 @@
   border-top: 1px solid black;
   display: flex;
   justify-content: flex-end;
+  background-color: white;
+}
+
+.anonimusic{
+  height: 75px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-button {
-  padding-right: 5%;
-  font-size: smaller
+  font-size: smaller;
+  margin-left: 10px;
+  padding: 2px, 2px, 2px, 2px;
+} 
+
+.nav-button:hover {
+  border: 1px solid red;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
 }
 
 .slideshow-container {
