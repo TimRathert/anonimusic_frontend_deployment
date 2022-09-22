@@ -1,11 +1,19 @@
 import React from 'react'
+import { useState } from 'react';
 import '../App.css'
-const Nav = () => {
+
+
+const Nav = (props) => {
   return (
-    <div className="nav-container">
-        <div className="nav-button">Home</div>
-        <div className="nav-button">Post</div>
-    </div>
+    <section style={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>
+      
+      <div className="nav-container">
+        <img className="anonimusic" src='https://i.imgur.com/tCdcpsR.png' alt='Anonimusic'></img>
+        <div><p className="nav-button">Welcome, {props.session}</p></div>
+{/*     <div><p className="nav-button">Home</p></div>
+        <div><p className="nav-button">Post</p></div> */}
+      </div>
+    </section>
   )
 }
 

@@ -1,49 +1,192 @@
+#root {
+  background-color: rgba(60, 77, 49, .2);
+  width: 100%;
+}
+
 .App {
   text-align: center;
+  min-width: 400px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .nav-container {
-  height: 5vw;
-  width: 90vw;
+  height: fit-content;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 24px;
+}
+
+.anonimusic{
+  height: 75px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  margin-top: 10px;
-  padding: 30px 20px;
-  border-top: 1px solid black;
+}
+
+.nav-button {
+  font-size: smaller;
+  margin-left: 10px;
+  padding: 2px, 2px, 2px, 2px;
+} 
+
+.nav-button:hover {
+  border: 1px solid red;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+}
+
+.slide-container {
+  padding-top: 2%;
+  height: 35%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+#inputForm{
+  margin: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-radius: 8px;
+}
+.formInput{
+  gap: 6px;
+}
+
+.Collapsible__contentOuter{
+  width: 100%;
+}
+
+.post-container {
+margin: 0px auto;
+margin-top: 8px;
+width:80%;
+background-color: whitesmoke;
+border-radius:2px;
+}
+
+.individualPost{
+  height: fit-content;
+  display: block;
+  padding: 12px;
+}
+.postTopBar{
+  display: flex;
+  align-items: center;
+}
+.deletePostButton{
+margin-left: 30px;
+}
+.userInfo{
+  display: flex;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
+  padding-top: 1%;
+  margin-right: 2%;
+
+}
+.profile-pic-container{
+  width: 45px;
+  height: 45px;
+  margin-right: 2%;
+  border-radius:50%; 
+  overflow: hidden;
+}
+.profile-pic {
+  object-fit: cover;
+}
+
+.postMiddleBar{
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.react-player {
+  max-width: 100%;
+}
+.post-description{
+  font-size: 14px;
+}
+
+.commentContent{
+  background-color:rgba(55, 55, 55, 0.);
+}
+.comment{
+  background-color: rgb(255, 99, 71, .3);
+  gap: 12px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+  padding: 10px;
+}
+.commentUser{
+  font-size: 12px;
+  align-self:flex-end;
+}
+.commentTimestamp {
+  font-size: 12px;
+  align-self:flex-end;
+}
+
+/* Named by react-collapse package */
+.Collapsible__contentInner {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+  background-color: whitesmoke;
+  border-radius: 0px;
+  border-bottom: solid rgba(60, 77, 49, .5);
+}
+
+.collapsible {
+  margin: 20px;
+}
+.collapsible .Collapsible{
+  width: 100%;
+}
+
+.newCommentForm{
+  margin: 20px;
+}
+
+.footer-container {
+  margin-bottom: 3px;
+  position: relative;
+  bottom: 0;
   display: flex;
   justify-content: flex-end;
 }
 
-.nav-button {
-  padding-right: 5%;
-  font-size: smaller
-}
-
-.slideshow-container {
-  padding-top: 2%;
-  height: 35%;
-  width: 65%;
-  margin-left: 5%;
-  text-align: center;
-  border: solid black;
-  
-}
-
-.post-container {
-margin: 0 auto;
-width:80%;
-}
-
-.player-wrapper {
+.footer {
+  display: flex;
+  flex-direction: row;
   position: relative;
-  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
-  width: 56.25%;
-  margin: 0 auto;
+  width: 40%;
 }
 
-.react-player {
-  
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
+.copyright {
+  font-size: 15px;
+  margin-right: 10%;
+  font-size: 8px;
 }
