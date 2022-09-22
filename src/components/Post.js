@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactAudioPlayer from 'react-audio-player'
-// import forceVideo from 'react-player'
 import Comment from './Comment'
 import Collapsible from 'react-collapsible'
 import NewComment from './NewComment'
 
 
 const Post = (props) => {
-   
+  
+  
+  useEffect(()=> {
+    props.getPosts();
+  },[]);
+  
   return (
     <div className="post-container">
        {props.props.map((post, index)=> {  
@@ -23,9 +27,9 @@ const Post = (props) => {
              />
           </div>
           <p></p>
-          <Comment props={post.comments}/>
+          <Comment  props={post.comments}/>
           <Collapsible className="new-comment" trigger="New Comment">
-            <NewComment props={post._id}/>
+            <NewComment getPosts={props.getPosts} props={post._id}/>
           </Collapsible>
           </div>
           )

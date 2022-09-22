@@ -2,8 +2,8 @@ import React, { useState, useRef } from 'react';
 import FileInvalidModal from './FileInvalidModal';
 import Spinner from 'react-bootstrap/Spinner';
 
-function NewPost() {
-
+function NewPost(props) {
+    // console.log(props.getPosts());
     //State for form
     const [newForm, setNewForm ] = useState({
         user: 'test-user',
@@ -68,7 +68,7 @@ function NewPost() {
     }
     const uploadPost = async(url) => {
         const postDBurl = process.env.REACT_APP_MONGODB_URL       
-        const data = {...newForm, file: url}
+        const data = {...newForm, file: url, user: `${props.session}`}
         //console.log(data)
         try{
             const newPost = await fetch(postDBurl,{
@@ -81,13 +81,14 @@ function NewPost() {
             })
                console.log(newPost)
             setNewForm({
-                user: 'test-user',
+                user: `test-user`,
                 title: '',
                 description: '',
                 file: '',
                 tags:'',
-            })
-            document.getElementById('inputForm').reset()     
+            }) 
+            document.getElementById('inputForm').reset() 
+            props.getPosts();    
         }
         catch(e){
            console.log(e)
