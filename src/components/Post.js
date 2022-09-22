@@ -18,13 +18,16 @@ const Post = (props) => {
        {props.props.map((post, index)=> {  
           return ( 
           <div key = { index } className="individualPost">
-            <ColorMe props={post.user}/>
             <div className="postTopBar">
               <div className='userInfo'>
                 <div className='profile-pic-container'>
                   <img className="profile-pic" src="https://picsum.photos/200/300" alt="profile-pic"/>           
                 </div>                
-                <div className="username">{post.user}:</div>
+                <div 
+                  className="username"
+                  style={ColorMe(post.user)} //colors username text
+                  
+                >{post.user}:</div>
               </div>
               <div className='postTitle'>{ post.title }</div>
             </div>  
