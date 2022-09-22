@@ -103,7 +103,7 @@ function NewPost(props) {
        
        
         return(
-            <Collapsible trigger={(<i class="fa-solid fa-microphone"></i>)}>
+            <Collapsible trigger={(<i className="fa-solid fa-microphone"></i>)}>
             <form id="inputForm" onSubmit={ handleSubmit }>
                 <input 
                     type="file" 

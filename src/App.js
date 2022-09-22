@@ -26,6 +26,8 @@ function App(props) {
     setSession(response)
   }
 
+ 
+
   useEffect(()=> {
     getSession();
   },[]);
@@ -38,7 +40,7 @@ function App(props) {
       <Nav session={session}/>
       <Slideshow Images="Images"/>
       <NewPost getPosts={getPosts} session={session}/>
-      <Post getPosts={getPosts} session={session} props={post}/>
+      <Post getPosts={getPosts} session={session}  props={post}/>
       <Footer/>
     </div>
   );
