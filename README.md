@@ -27,7 +27,7 @@ Anonimusic is a site where users are signed in anonimously and are able to uploa
   
   ## Getting Started
    ### Links 
-   * <a href ="https://i.imgur.com/uuQrFRl.png"> Frontend </a> 
+   * <a href ="https://vocal-daffodil-44e825.netlify.app/"> Frontend </a> 
    * <a href ="https://anonimusic-backend.herokuapp.com/"> Backend </a> 
  
   ## User Stories
