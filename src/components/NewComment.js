@@ -14,14 +14,15 @@ const NewComment = (props) => {
   const handleSubmit  = async (e) => {
     e.preventDefault()
     try{
-      const data = {...newComment, user: `${props.session}`}
+      const data = {...newComment, user: `${props.session}`, timestamp: new Date()}
       const updateComment = await fetch(url, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {
           "content-type": "application/JSON"
-        } 
+        }
       })
+      
       props.getPosts();
       setNewComment({
         user: '',
