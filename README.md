@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# 🎤 Anonimusic 🎤
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### What is Anonimusic?
 
-## Available Scripts
+Anonimusic is a site where users are signed in anonimously and are able to upload audio files, tag them and put them onto the site. Other users are able to view, listen to, and comment on the audio files. Provided the user does not leave (or refresh) the page they rea able to delete posts that they have just made. Once they leave the page, the post is on the internet forever.
 
-In the project directory, you can run:
+## Table of Contents
+  -[💻 Screenshots](#screenshots)  
+  -[🤔 Getting Started](#getting-started)  
+  -[🤼 User Stories](#user-stories)  
+  -[✨ Features](#features)  
+  -[🎭 Contributors](#contributors)  
+  -[🐾 Next Steps](#next-steps)  
+  
+  ## Screenshots
+    
+   <details>
+   <summary>Home Screen</summary>
+   <img src="https://i.imgur.com/z4ZNYcz.png" alt="Anonimusic Screenshot 01" style="width: 600px; padding: 20px" />
+   </details>
+  
+   <details>
+   <summary>Posts Example</summary>
+    <img src="https://i.imgur.com/zKIzm6T.png" alt="Anonimusic Screenshot 02" style="width: 600px; padding: 20px" />
+   </details> 
+   
+  
+  ## Getting Started
+   ### Links 
+   * <a href ="https://i.imgur.com/uuQrFRl.png"> Frontend </a> 
+   * <a href ="https://anonimusic-backend.herokuapp.com/"> Backend </a> 
+ 
+  ## User Stories
+  * A user navigates to the page and sees the logo and carousel with any news or updates
+  * User scrolls through the page and listens to the post's audio. Finding a post that grabs their attention, the user decides to contribute to the conversation by adding a comment.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  * A user wants to contribute a post to the page.
+  * User navigates to the new post option, opening the drop down and filling in the required information. 
+  * Once submitted, the user sees their post populate the page and, for as long as the user maintains the same session, the user can delete their post. Once the user leaves the page or ends their session the post is no longer editable.
+    
+  ## Features
+  
+   <details>
+   <summary>Post Component</summary>
+     <img src="https://i.imgur.com/yW4BPi9.png" alt="Anonimusic Code Example 01" style="width: 600px; padding: 20px" />
+   </details>
+  
+   <details>
+   <summary>Conditional Post Deleting</summary>
+    <img src="https://i.imgur.com/uuQrFRl.png" alt="Anonimusic Code Example 02" style="width: 600px; padding: 20px" />
+   </details>
+    
+   <details>
+   <summary>Session Initialization</summary>
+    <img src="https://i.imgur.com/NhpZboU.png" alt="Anonimusic Code Example 03" style="width: 600px; padding: 20px" />
+   </details>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   <details>
+   <summary>Uploading New Files and new Posts</summary>
+    <img src="https://i.imgur.com/85aDARR.png" alt="Anonimusic Code Example 04" style="width: 600px; padding: 20px" />
+   </details>
+  
+  ## Contributors
+  * Ben Baker - <a href="https://github.com/bbakercello">GitHub</a> - <a href="https://www.linkedin.com/in/ben-baker-cello/">LinkedIn</a>
+  * Harvey Spinks - <a href="https://github.com/hspinks2692">GitHub</a> - <a href="https://www.linkedin.com/in/harvey-spinks/">LinkedIn</a>
+  * Tim Rathert - <a href="https://github.com/TimRathert">GitHub</a> - <a href="https://www.linkedin.com/in/tim-rathert/">LinkedIn</a>
+  
+  ## Next Steps
+- [ ] Search post tags
+- [x] Generate Random Profile Image (Canvas generated based on session username)
+- [ ] Implement Random Profile Images
+- [ ] Ability to record a new audio file in the browser
+- [ ] Oxford Comma?
