@@ -9,10 +9,6 @@ import ColorMe from './ColorMe'
 
 const Post = (props) => {
   
-  useEffect(()=> {
-    props.getPosts();
-  },[]);
- 
   const deletePost = (newVar) => {
     const actuallyDeletePost = async (e) => {
       e.preventDefault()
@@ -30,7 +26,7 @@ const Post = (props) => {
       }
     }  
 
-      if(props.session == newVar.user){return (<input
+      if(props.session === newVar.user){return (<input
         type="button"
         className='deletePostButton'
         value='Delete'
@@ -38,6 +34,13 @@ const Post = (props) => {
         />)}
       else{return(<div></div>)}
   }
+
+  const { getPosts } = props;
+
+  useEffect(()=> {
+    getPosts()},
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+    []);
 
   return (
     <div className="post-container">
