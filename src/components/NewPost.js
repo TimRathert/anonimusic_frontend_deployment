@@ -2,8 +2,7 @@ import React, { useState, useRef } from 'react';
 import FileInvalidModal from './FileInvalidModal';
 import Spinner from 'react-bootstrap/Spinner';
 import Collapsible from 'react-collapsible';
-
-
+import Recorder from './Recorder';
 
 function NewPost(props) {
     // console.log(props.getPosts());
@@ -107,6 +106,7 @@ function NewPost(props) {
                 className="newPostContainer" 
                 trigger={(<i className="fa-solid fa-microphone"> New Post</i>)}
             >
+                <Recorder audioFile = { audioFile }  />
             <form id="inputForm" onSubmit={ handleSubmit }>
                 <input 
                     type="file" 
