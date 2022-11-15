@@ -42,7 +42,7 @@ This project was a collaboration (see Contributors) and was completed in 4 days 
   
   ## Getting Started
    ### Links 
-   * <a href ="https://vocal-daffodil-44e825.netlify.app/"> Frontend </a> 
+   * <a href ="https://relaxed-pasca-a51c66.netlify.app/"> Frontend </a> 
    * <a href ="https://anonimusic-backend.herokuapp.com/"> Backend </a> 
  
   ## User Stories
