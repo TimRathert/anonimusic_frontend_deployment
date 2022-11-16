@@ -60,7 +60,7 @@ function NewPost(props) {
         // returned url is appended to the newForm state
     }
     const checkSize = (e) => {
-        audioFile.current = e.target.files[0]
+        console.log(audioFile.current.size)
         if(audioFile.current.size > 400000){
            document.getElementById('inputForm').reset()
            setShowModal(true)
@@ -115,6 +115,7 @@ function NewPost(props) {
                     accept='audio/*'
                     onChange={ checkSize }  
                     className="formInput"
+                    ref={ audioFile }
                 />  
                 <input 
                     type="text" 
