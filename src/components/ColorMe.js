@@ -37,7 +37,6 @@ const ColorMe = (props) => {
     }
     
     let colors = [parseInt(r),parseInt(b),parseInt(g)]
-    // console.log(colors)
     const color = {color:`rgb(${colors[0]},${colors[1]},${colors[2]})`}
     return color
   }

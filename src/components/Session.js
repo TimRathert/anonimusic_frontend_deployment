@@ -6,13 +6,7 @@ const Session = () => {
         let sessionObject = {username: str}
         sessionStorage.setItem('userdata', JSON.stringify(sessionObject))
     }
-
-    //const getData = () => {
-       // let sessionData = sessionStorage.getItem('userdata')
-       // sessionData = JSON.parse(sessionData);
-   //}
     setData();
-    // getData(); 
 }
 
 export default Session
