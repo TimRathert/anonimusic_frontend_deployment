@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const NewComment = (props) => {
-  // console.log(props.session)
   const [newComment, setNewComment] = useState ({
     user: '',
     post: ''
@@ -30,11 +29,8 @@ const NewComment = (props) => {
       })
     }
     catch(err){
-      // console.log(err)
     }
   }
-
-  // console.log(props)
 
   const url = `${process.env.REACT_APP_MONGODB_URL}${props.props}/comment`
 

@@ -5,8 +5,6 @@ import Collapsible from 'react-collapsible';
 import Recorder from './Recorder';
 
 function NewPost(props) {
-    // console.log(props.getPosts());
-    //State for form
     const [newForm, setNewForm ] = useState({
         user: 'test-user',
         title: '',
@@ -17,7 +15,7 @@ function NewPost(props) {
 
     //state for Modal
     const [showModal, setShowModal] = useState(false);
-    let audioFile = useRef (null);
+    let audioFile = useRef(null);
     const [ formReady, setFormReady ] = useState(true);
 
     const handleChangeDB = (e) => {
@@ -29,17 +27,12 @@ function NewPost(props) {
         e.preventDefault();
         setFormReady(false)
         try{
-            //await uploadFile() //to cloudinary
             const data = await uploadFile()
-            //console.log(data)
             uploadPost(data.url)
-           //.then( uploadPost() )// to mongodb
         }
         catch(err){
             console.log(err)
         }
-        // const promise = uploadFile() //to cloudinary
-        // const promise2 = promise.then(uploadPost(),''); // to mongodb
         setFormReady(true)
     }
         
@@ -60,7 +53,7 @@ function NewPost(props) {
         // returned url is appended to the newForm state
     }
     const checkSize = (e) => {
-        console.log(audioFile.current.size)
+        audioFile.current = e.target.files[0]
         if(audioFile.current.size > 400000){
            document.getElementById('inputForm').reset()
            setShowModal(true)
@@ -71,7 +64,6 @@ function NewPost(props) {
     const uploadPost = async(url) => {
         const postDBurl = process.env.REACT_APP_MONGODB_URL       
         const data = {...newForm, file: url, user: `${props.session}`}
-        //console.log(data)
         try{
             const newPost = await fetch(postDBurl,{
                 method: 'POST',
@@ -81,7 +73,7 @@ function NewPost(props) {
                 body: JSON.stringify(data),
                 
             })
-               console.log(newPost)
+               
             setNewForm({
                 user: `test-user`,
                 title: '',
@@ -95,7 +87,6 @@ function NewPost(props) {
         catch(e){
            console.log(e)
         }
-        //reset form on submit
     }
     
     const ready = () => {
@@ -115,7 +106,7 @@ function NewPost(props) {
                     accept='audio/*'
                     onChange={ checkSize }  
                     className="formInput"
-                    ref={ audioFile }
+                    ref = { audioFile }
                 />  
                 <input 
                     type="text" 
